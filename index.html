@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Reviva | Orientação especializada para famílias</title>
+<meta name="description" content="Sua família não precisa decidir sozinha. Fale agora com um especialista do Hospital Reviva, com sigilo total.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<!-- Open Graph / compartilhamento -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hospital Reviva | Orientação especializada para famílias">
+<meta property="og:description" content="Fale agora com um especialista do Hospital Reviva e receba orientação clara e sigilosa sobre o melhor caminho para quem você ama.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://SEU-DOMINIO.com.br/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Performance: preconnect para domínios externos usados na página -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://connect.facebook.net">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     GOOGLE TAG (GA4 + Google Ads)
+     Troque GA_MEASUREMENT_ID e AW-CONVERSION_ID pelos seus IDs reais.
+     ============================================ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+  // gtag('config', 'AW-CONVERSION_ID'); // descomente e preencha quando tiver a conta do Google Ads
+</script>
+
+<!-- ============================================
+     META PIXEL (Facebook/Instagram Ads)
+     Troque SEU_PIXEL_ID pelo ID real do pixel.
+     ============================================ -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'SEU_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
+/></noscript>
+<style>
+  :root{
+    --night: #123034;
+    --night-soft: #1a4347;
+    --sand: #f7f0e3;
+    --sand-deep: #ede2cd;
+    --teal: #1a555b;
+    --teal-light: #5fa893;
+    --coral: #e3bd76;
+    --coral-deep: #c79b4e;
+    --whatsapp: #2eaa6b;
+    --whatsapp-deep: #238a55;
+    --line: rgba(18,36,31,0.12);
+    --ink: #18241f;
+    --ink-soft: #4a5a53;
+    --radius: 18px;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--sand);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  section{padding: 88px 0;}
+  h1,h2,h3{font-family: var(--serif); font-weight:600; line-height:1.12; letter-spacing:-0.01em;}
+  .eyebrow{
+    font-size:13px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color: var(--coral-deep);
+  }
+  .lede{font-size:19px; color:var(--ink-soft); max-width:640px;}
+
+  /* Sticky WhatsApp bar */
+  .float-wa{
+    position:fixed; right:20px; bottom:20px; z-index:60;
+    display:flex; align-items:center; gap:10px;
+    background: var(--whatsapp); color:#fff;
+    padding:14px 20px; border-radius:999px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    text-decoration:none; font-weight:600; font-size:15px;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .float-wa:hover{transform:translateY(-2px); box-shadow:0 14px 36px rgba(0,0,0,0.28);}
+  .float-wa svg{width:22px; height:22px; flex-shrink:0;}
+
+  /* Top bar */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background: rgba(246,241,231,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{font-family:var(--serif); font-size:21px; font-weight:600; color:var(--night); display:flex; align-items:center; gap:10px;}
+  .logo .dot{width:9px; height:9px; border-radius:50%; background:var(--coral); display:inline-block;}
+  .logo svg{width:24px; height:24px; color:var(--teal);}
+  .top-cta{
+    background: var(--whatsapp); color:#fff; padding:11px 20px; border-radius:999px;
+    font-weight:600; font-size:14.5px; text-decoration:none; white-space:nowrap;
+    display:flex; align-items:center; gap:8px;
+  }
+  .top-cta:hover{background:var(--whatsapp-deep);}
+  .top-cta svg{width:18px; height:18px;}
+
+  /* HERO */
+  .hero{
+    background-image: linear-gradient(135deg, rgba(18,48,52,0.93) 0%, rgba(26,67,71,0.88) 100%), url('assets/img/hero-bg.webp');
+    background-size: cover;
+    background-position: center;
+    color: var(--sand);
+    padding: 80px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; right:-180px; top:-180px;
+    width:520px; height:520px; border-radius:50%;
+    background: radial-gradient(circle at center, rgba(217,122,77,0.22), transparent 70%);
+  }
+  .hero-inner{position:relative; z-index:2; max-width:760px;}
+  .badge-confid{
+    display:inline-flex; align-items:center; gap:8px;
+    background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16);
+    padding:8px 16px; border-radius:999px; font-size:13.5px; font-weight:500;
+    margin-bottom:26px; color: var(--sand);
+  }
+  .badge-confid svg{width:16px; height:16px; color: var(--coral);}
+  .hero h1{
+    font-size: clamp(32px, 4.6vw, 50px);
+    color:#fff;
+    margin-bottom:22px;
+    max-width: 14ch;
+  }
+  .hero .lede{color: rgba(246,241,231,0.82); font-size:19px; max-width:540px; margin-bottom:36px;}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; align-items:center;}
+  .btn-primary{
+    background: var(--whatsapp); color:#fff; padding:18px 30px; border-radius:14px;
+    font-weight:700; font-size:16.5px; text-decoration:none;
+    display:inline-flex; align-items:center; gap:10px;
+    box-shadow: 0 14px 30px rgba(46,170,107,0.32);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 36px rgba(46,170,107,0.4);}
+  .btn-primary svg{width:22px;height:22px;}
+  .btn-secondary{
+    border:1px solid rgba(246,241,231,0.3); color:var(--sand);
+    padding:17px 26px; border-radius:14px; font-weight:600; font-size:15.5px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:9px;
+  }
+  .btn-secondary:hover{background:rgba(255,255,255,0.06);}
+  .hero-foot{margin-top:30px; font-size:13.5px; color:rgba(246,241,231,0.55); display:flex; gap:18px; flex-wrap:wrap;}
+  .hero-foot span{display:flex; align-items:center; gap:6px;}
+  .hero-foot svg{width:14px; height:14px;}
+
+  /* SECTION HEADER */
+  .sec-head{max-width:680px; margin-bottom:48px;}
+  .sec-head h2{font-size: clamp(26px, 3.2vw, 36px); margin-top:10px; color:var(--night);}
+
+  /* CONTEXTO EMOCIONAL */
+  .context{background: var(--sand-deep);}
+  .context-grid{display:grid; grid-template-columns: 1fr 1fr; gap:48px; align-items:start;}
+  .context-list{display:flex; flex-direction:column; gap:22px;}
+  .context-item{display:flex; gap:16px; align-items:flex-start;}
+  .context-item .ico{
+    width:42px; height:42px; border-radius:12px; background:var(--night); color:var(--coral);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .context-item .ico svg{width:21px; height:21px;}
+  .context-item h4{font-family:var(--sans); font-weight:600; font-size:16.5px; margin-bottom:4px; color:var(--night);}
+  .context-item p{color:var(--ink-soft); font-size:15px;}
+  .context-quote{
+    background: var(--night); color: var(--sand); border-radius: var(--radius);
+    padding:40px 36px; position:relative;
+  }
+  .context-quote p{font-family:var(--serif); font-size:22px; line-height:1.5; font-weight:500; color:#fff;}
+  .context-quote .by{margin-top:22px; font-family:var(--sans); font-size:13.5px; color:rgba(246,241,231,0.6);}
+
+  /* COMO AJUDA */
+  .help-grid{display:grid; grid-template-columns: repeat(2, 1fr); gap:20px;}
+  .help-card{
+    background:#fff; border:1px solid var(--line); border-radius: var(--radius);
+    padding:30px; transition: box-shadow .2s ease, transform .2s ease;
+  }
+  .help-card:hover{box-shadow:0 16px 32px rgba(18,36,31,0.08); transform:translateY(-3px);}
+  .help-card .num{font-family:var(--serif); font-size:14px; color:var(--coral-deep); font-weight:600; margin-bottom:14px;}
+  .help-card h3{font-size:19px; margin-bottom:10px; color:var(--night);}
+  .help-card p{color:var(--ink-soft); font-size:15px;}
+
+  /* DIFERENCIAIS */
+  .diff{background:var(--night); color:var(--sand);}
+  .diff .sec-head h2{color:#fff;}
+  .diff .eyebrow{color:var(--coral);}
+  .diff-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(246,241,231,0.12); border-radius:var(--radius); overflow:hidden;}
+  .diff-item{background:var(--night-soft); padding:32px 26px;}
+  .diff-item .ico{color:var(--coral); margin-bottom:16px;}
+  .diff-item .ico svg{width:26px; height:26px;}
+  .diff-item h4{font-family:var(--sans); font-size:16.5px; font-weight:600; margin-bottom:8px; color:#fff;}
+  .diff-item p{font-size:14.5px; color:rgba(246,241,231,0.68);}
+
+  /* GALERIA ESTRUTURA */
+  .gallery-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  .gallery-item{
+    position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/3;
+    box-shadow:0 8px 24px rgba(18,36,31,0.12);
+  }
+  .gallery-item img{width:100%; height:100%; object-fit:cover; display:block; transition: transform .4s ease;}
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-item .cap{
+    position:absolute; left:0; right:0; bottom:0;
+    background: linear-gradient(0deg, rgba(18,48,52,0.88) 0%, transparent 100%);
+    color:#fff; font-size:14px; font-weight:600; padding:28px 16px 14px;
+  }
+  @media (max-width:860px){ .gallery-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .gallery-grid{grid-template-columns:1fr;} }
+
+  /* COMO FUNCIONA */
+  .steps{position:relative;}
+  .steps-row{display:grid; grid-template-columns:repeat(3,1fr); gap:32px; position:relative;}
+  .steps-row::before{
+    content:""; position:absolute; top:27px; left:14%; right:14%; height:1px;
+    background: repeating-linear-gradient(90deg, var(--line) 0 8px, transparent 8px 16px);
+    z-index:0;
+  }
+  .step{position:relative; z-index:1;}
+  .step .circle{
+    width:56px; height:56px; border-radius:50%; background:var(--coral); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif);
+    font-size:22px; font-weight:600; margin-bottom:20px;
+  }
+  .step h4{font-size:18px; margin-bottom:8px; color:var(--night);}
+  .step p{color:var(--ink-soft); font-size:15px;}
+
+  /* PROVA SOCIAL */
+  .social{background:var(--sand-deep);}
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi{
+    background:#fff; border-radius:var(--radius); padding:28px; border:1px solid var(--line);
+  }
+  .testi .stars{color:var(--coral); font-size:15px; margin-bottom:14px; letter-spacing:2px;}
+  .testi p{font-size:15.5px; color:var(--ink); margin-bottom:18px; font-style:italic;}
+  .testi .who{font-size:13.5px; color:var(--ink-soft); font-weight:600;}
+
+  /* FAQ */
+  .faq-list{max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--serif); font-size:18px; font-weight:500; color:var(--night);
+  }
+  .faq-q .plus{font-size:22px; color:var(--coral-deep); transition: transform .25s ease; flex-shrink:0; margin-left:16px;}
+  .faq-item.open .faq-q .plus{transform: rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition: max-height .3s ease;}
+  .faq-a p{padding-bottom:22px; color:var(--ink-soft); font-size:15.5px; max-width:640px;}
+
+  /* CTA FINAL */
+  .final-cta{
+    background-image: linear-gradient(135deg, rgba(47,93,84,0.90) 0%, rgba(18,48,52,0.93) 100%), url('assets/img/cta-night.webp');
+    background-size: cover;
+    background-position: center;
+    color:#fff; text-align:center; padding:96px 0;
+    position:relative; overflow:hidden;
+  }
+  .final-cta::before{
+    content:""; position:absolute; left:50%; top:-220px; transform:translateX(-50%);
+    width:600px; height:600px; border-radius:50%;
+    background: radial-gradient(circle, rgba(217,122,77,0.18), transparent 70%);
+  }
+  .final-cta .inner{position:relative; z-index:2; max-width:680px; margin:0 auto;}
+  .final-cta h2{color:#fff; font-size:clamp(28px,4vw,40px); margin-bottom:18px;}
+  .final-cta p{color:rgba(246,241,231,0.82); font-size:18px; margin-bottom:36px;}
+  .final-cta .btn-primary{font-size:18px; padding:20px 36px;}
+  .final-cta .micro{margin-top:20px; font-size:13.5px; color:rgba(246,241,231,0.55);}
+
+  /* FOOTER */
+  footer{background:var(--night); color:rgba(246,241,231,0.55); padding:36px 0; font-size:13.5px;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+  footer .f-logo{font-family:var(--serif); color:var(--sand); font-size:16px;}
+
+  @media (max-width: 860px){
+    section{padding:64px 0;}
+    .context-grid, .help-grid, .diff-grid, .steps-row, .testi-grid{grid-template-columns:1fr;}
+    .steps-row::before{display:none;}
+    .hero{padding:56px 0 72px;}
+    .top-cta span.full{display:none;}
+    footer .wrap{flex-direction:column; text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="logo">
+      <img src="assets/img/logo-96.webp" alt="Hospital Reviva" style="width:38px;height:38px;border-radius:50%;">
+      Hospital Reviva
+    </div>
+    <a class="top-cta" href="https://wa.me/5562992433763?text=Ol%C3%A1%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20para%20um%20familiar." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.37 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C16.8 3.03 14.5 2 12.04 2zm0 18.07h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.22-8.24 8.22zm4.51-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.65 4.2 3.71.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+      <span class="full">Falar no WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="badge-confid">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+      Atendimento 100% sigiloso
+    </div>
+    <h1>Sua família não precisa decidir isso sozinha</h1>
+    <p class="lede">Fale agora com um especialista do Hospital Reviva e receba orientação clara, humana e sigilosa sobre o melhor caminho para quem você ama.</p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://wa.me/5562992433763?text=Ol%C3%A1%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20para%20um%20familiar." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.37 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C16.8 3.03 14.5 2 12.04 2zm0 18.07h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.22-8.24 8.22zm4.51-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.65 4.2 3.71.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+        Falar com um especialista no WhatsApp
+      </a>
+      <a class="btn-secondary" href="tel:+5562992433763">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Ligar agora
+      </a>
+    </div>
+    <div class="hero-foot">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Resposta rápida</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg> Conversa confidencial</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Equipe especializada</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXTO EMOCIONAL -->
+<section class="context">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Nós entendemos</div>
+      <h2>Se você chegou até aqui, provavelmente já tentou de tudo</h2>
+    </div>
+    <div class="context-grid">
+      <div class="context-list">
+        <div class="context-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+          <div>
+            <h4>O medo que não passa</h4>
+            <p>Aquela sensação constante de que algo grave pode acontecer a qualquer momento.</p>
+          </div>
+        </div>
+        <div class="context-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+          <div>
+            <h4>O cansaço de cuidar sozinho</h4>
+            <p>Noites mal dormidas, conversas que viram discussão, energia que parece nunca ser suficiente.</p>
+          </div>
+        </div>
+        <div class="context-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h4>A sensação de impotência</h4>
+            <p>Ver alguém que você ama sofrendo, sem saber exatamente o que fazer para ajudar de verdade.</p>
+          </div>
+        </div>
+        <div class="context-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/></svg></div>
+          <div>
+            <h4>A dúvida sobre o que fazer</h4>
+            <p>Internar? Conversar? Esperar? Tantas opiniões diferentes e nenhuma certeza sobre o caminho certo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="context-quote">
+        <p>“Você não precisa ter todas as respostas agora. Você só precisa de alguém que saiba ouvir e orientar com clareza.”</p>
+        <div class="by">Equipe de acolhimento — Hospital Reviva</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO AJUDA -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Como ajudamos</div>
+      <h2>Orientação clara, no seu tempo e do seu jeito</h2>
+    </div>
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="num">Orientação inicial</div>
+        <h3>Conversa com equipe especializada</h3>
+        <p>Você fala diretamente com profissionais preparados para acolher famílias em momentos difíceis — sem julgamento, sem pressa.</p>
+      </div>
+      <div class="help-card">
+        <div class="num">Avaliação sigilosa</div>
+        <h3>Entendimento real do caso</h3>
+        <p>Reunimos as informações que você puder compartilhar para entender a situação com cuidado e profundidade, com total confidencialidade.</p>
+      </div>
+      <div class="help-card">
+        <div class="num">Direcionamento</div>
+        <h3>O melhor tipo de cuidado para cada caso</h3>
+        <p>Cada situação é única. A orientação aponta o caminho mais adequado, sem decisões impostas ou apressadas.</p>
+      </div>
+      <div class="help-card">
+        <div class="num">Apoio contínuo</div>
+        <h3>Suporte à família durante o processo</h3>
+        <p>Você não fica sozinho depois do primeiro contato. A equipe acompanha as próximas etapas junto com você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diff">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Por que famílias confiam no Hospital Reviva</div>
+      <h2>Estrutura preparada para momentos sérios</h2>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <h4>Atendimento sigiloso e humanizado</h4>
+        <p>Cada conversa é tratada com discrição e respeito, do primeiro contato em diante.</p>
+      </div>
+      <div class="diff-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4>Equipe especializada</h4>
+        <p>Profissionais preparados para apoiar diferentes tipos de crise emocional e familiar.</p>
+      </div>
+      <div class="diff-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h4>Suporte 24h para famílias</h4>
+        <p>Momentos de crise não têm hora marcada — o canal de orientação também não.</p>
+      </div>
+      <div class="diff-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h4>Estrutura completa de acolhimento</h4>
+        <p>Preparada para receber tanto o paciente quanto a família que o acompanha.</p>
+      </div>
+      <div class="diff-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h4>Processo claro e orientado</h4>
+        <p>Você entende cada etapa antes de seguir para a próxima — sem surpresas.</p>
+      </div>
+      <div class="diff-item">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h4>Cuidado de verdade</h4>
+        <p>Não tratamos sua família como um número. Cada caso recebe atenção real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA / ESTRUTURA REAL -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Conheça o espaço</div>
+      <h2>Um ambiente pensado para acolher, não para internar</h2>
+      <p class="lede" style="margin-top:14px;">Estrutura residencial, arborizada e tranquila — bem diferente da imagem que normalmente se imagina.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/img/estrutura-caminho.webp" alt="Caminho arborizado do Hospital Reviva" loading="lazy">
+        <div class="cap">Ambiente arborizado e tranquilo</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/estrutura-quartos.webp" alt="Acomodações do Hospital Reviva" loading="lazy">
+        <div class="cap">Acomodações confortáveis</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/estrutura-convivencia.webp" alt="Espaço de convivência do Hospital Reviva" loading="lazy">
+        <div class="cap">Espaço de convivência</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/estrutura-piscina.webp" alt="Área de lazer do Hospital Reviva" loading="lazy">
+        <div class="cap">Área de lazer</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/estrutura-predio.webp" alt="Estrutura completa do Hospital Reviva" loading="lazy">
+        <div class="cap">Estrutura completa</div>
+      </div>
+      <div class="gallery-item">
+        <img src="assets/img/estrutura-fachada.webp" alt="Fachada do Hospital Reviva" loading="lazy">
+        <div class="cap">Hospital Reviva — entrada</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="steps">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Três passos simples para começar</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="circle">1</div>
+        <h4>Contato via WhatsApp</h4>
+        <p>Você inicia a conversa quando estiver pronto, sem compromisso e com total sigilo.</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <h4>Entendimento do caso</h4>
+        <p>Nossa equipe escuta sua situação com calma, para entender o que está acontecendo de verdade.</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <h4>Orientação e direcionamento</h4>
+        <p>Você recebe um caminho claro sobre os próximos passos, no ritmo que for possível para sua família.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="social">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Famílias que já passaram por isso</div>
+      <h2>Relatos de quem encontrou orientação no momento certo</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>Recebemos orientação em um momento muito difícil e conseguimos entender o melhor caminho com segurança.</p>
+        <div class="who">Família atendida pelo Hospital Reviva</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>Eu não sabia nem por onde começar. A conversa pelo WhatsApp me ajudou a organizar as ideias e entender as opções.</p>
+        <div class="who">Familiar de paciente</div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>Fui tratada com respeito do início ao fim. Senti que finalmente alguém estava me ouvindo de verdade.</p>
+        <div class="who">Esposa de paciente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Perguntas frequentes</div>
+      <h2>Tire suas dúvidas antes de falar com a gente</h2>
+    </div>
+    <div class="faq-list" id="faq-list">
+
+      <div class="faq-item open">
+        <button class="faq-q">Isso é sigiloso?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><p>Sim. Toda conversa é tratada com total confidencialidade, desde o primeiro contato pelo WhatsApp.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Como funciona o atendimento?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><p>Você fala com a equipe de orientação pelo WhatsApp, conta o que está acontecendo no seu ritmo, e recebe direcionamento sobre os próximos passos.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Preciso decidir tudo imediatamente?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><p>Não. O primeiro contato serve para entender a situação e esclarecer dúvidas. Nenhuma decisão precisa ser tomada na hora.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Existe custo para essa orientação inicial?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><p>A conversa inicial de orientação não tem custo. Ela serve para entender o caso e explicar como o cuidado pode funcionar.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Como sei o que fazer pela minha família?
+          <span class="plus">+</span>
+        </button>
+        <div class="faq-a"><p>Você não precisa saber sozinho. É exatamente para isso que existe a orientação especializada — para te ajudar a enxergar o caminho com mais clareza.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta">
+  <div class="wrap inner">
+    <img src="assets/img/logo-256.webp" alt="Hospital Reviva" style="width:88px;height:88px;border-radius:50%;margin:0 auto 24px;display:block;box-shadow:0 12px 30px rgba(0,0,0,0.25);">
+    <h2>Você não precisa enfrentar isso sozinho</h2>
+    <p>Dê o primeiro passo agora. Uma conversa pode trazer a clareza que sua família precisa hoje.</p>
+    <a class="btn-primary" href="https://wa.me/5562992433763?text=Ol%C3%A1%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20para%20um%20familiar." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.37 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C16.8 3.03 14.5 2 12.04 2zm0 18.07h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.22-8.24 8.22zm4.51-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.65 4.2 3.71.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+      Falar com um especialista no WhatsApp
+    </a>
+    <div class="micro">Atendimento sigiloso · Equipe especializada · Sem compromisso</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="f-logo" style="display:flex; align-items:center; gap:10px;">
+      <img src="assets/img/logo-48.webp" alt="Hospital Reviva" style="width:28px;height:28px;border-radius:50%;">
+      Hospital Reviva
+    </div>
+    <div>Saúde mental e apoio à família · Atendimento sigiloso</div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="float-wa" href="https://wa.me/5562992433763?text=Ol%C3%A1%2C%20preciso%20de%20orienta%C3%A7%C3%A3o%20para%20um%20familiar." target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.85.5 3.58 1.37 5.07L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C16.8 3.03 14.5 2 12.04 2zm0 18.07h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.1.81.83-3.02-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.53 3.69-8.22 8.23-8.22 2.2 0 4.27.86 5.82 2.41a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.22-8.24 8.22zm4.51-6.16c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.12-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.65 4.2 3.71.59.25 1.04.4 1.4.52.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.08.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+  Falar agora
+</a>
+
+<!-- ============================================
+     SCHEMA.ORG (SEO local / rich snippets)
+     Preencha telefone, endereço e horário reais.
+     ============================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Hospital Reviva",
+  "description": "Clínica de saúde mental que oferece orientação sigilosa e acolhimento para famílias em momentos de crise emocional.",
+  "telephone": "+5562992433763",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": [
+    "https://instagram.com/hospitalreviva"
+  ]
+}
+</script>
+
+<script>
+  /* ============================================
+     1) CAPTURA E REPASSE DE UTM PARA O WHATSAPP
+     Pega utm_source, utm_medium, utm_campaign etc. da URL
+     do anúncio e anexa à mensagem do WhatsApp, para você
+     saber exatamente qual campanha/anúncio gerou o lead.
+     ============================================ */
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const utmKeys = ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid','fbclid'];
+    const utmData = {};
+    utmKeys.forEach(k=>{ if(params.get(k)) utmData[k] = params.get(k); });
+
+    // guarda em sessionStorage para persistir entre seções da página
+    if(Object.keys(utmData).length){
+      sessionStorage.setItem('reviva_utm', JSON.stringify(utmData));
+    }
+    const stored = sessionStorage.getItem('reviva_utm');
+    const finalUtm = stored ? JSON.parse(stored) : utmData;
+
+    function appendTrackingToWhatsApp(){
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link=>{
+        try{
+          const url = new URL(link.href);
+          let text = url.searchParams.get('text') || '';
+          if(Object.keys(finalUtm).length){
+            const origem = finalUtm.utm_source ? ` (origem: ${finalUtm.utm_source}/${finalUtm.utm_campaign||'-'})` : '';
+            url.searchParams.set('text', text + origem);
+          }
+          link.href = url.toString();
+        }catch(e){ /* ignora link malformado */ }
+      });
+    }
+    appendTrackingToWhatsApp();
+  })();
+
+  /* ============================================
+     2) EVENTOS DE CONVERSÃO
+     Dispara evento de "Lead" no Meta Pixel e no GA4/Google Ads
+     toda vez que alguém clica em WhatsApp ou Ligar — não apenas
+     no carregamento da página. É isso que permite ao algoritmo
+     de Meta/Google otimizar a campanha para quem converte de verdade.
+     ============================================ */
+  function trackConversion(channel){
+    if(typeof fbq === 'function'){
+      fbq('track', 'Lead', { content_name: channel });
+    }
+    if(typeof gtag === 'function'){
+      gtag('event', 'generate_lead', { method: channel });
+      // gtag('event', 'conversion', {'send_to': 'AW-CONVERSION_ID/LABEL_AQUI'}); // ative com seu label do Google Ads
+    }
+  }
+
+  document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link=>{
+    link.addEventListener('click', ()=> trackConversion('whatsapp'));
+  });
+  document.querySelectorAll('a[href^="tel:"]').forEach(link=>{
+    link.addEventListener('click', ()=> trackConversion('ligacao'));
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
